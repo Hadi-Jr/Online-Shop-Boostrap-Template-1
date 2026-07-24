@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "rater-js": "^1.0.1",
+    "swiper": "^14.0.1"
+  }
+}
