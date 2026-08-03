@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@editorjs/editorjs": "^2.31.6",
     "rater-js": "^1.0.1",
     "swiper": "^14.0.1"
   }
