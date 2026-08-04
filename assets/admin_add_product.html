@@ -12,70 +12,85 @@
                 </div>
             </div>
 
-            <form id="add-product-form" enctype="multipart/form-data">
+            <form id="add-product-form">
 
                 <div class="mb-3">
                     <label for="image" class="form-label fw-bold">Images</label>
-                    <input type="file" class="form-control" id="image" multiple accept="image/*" required>
+                    <input type="file" class="form-control" id="image" name="images[]"
+                           multiple accept="image/*" required>
+                    <div class="invalid-feedback"></div>
                 </div>
 
                 <div class="row">
                     <div class="col-12 col-md-6 mb-3">
                         <label for="product_name" class="form-label fw-bold">Product Name</label>
-                        <input type="text" class="form-control" id="product_name" placeholder="Enter a product name"
-                            required>
+                        <input type="text" class="form-control" id="product_name" name="product_name"
+                               placeholder="Enter a product name" required>
+                        <div class="invalid-feedback"></div>
                     </div>
 
                     <div class="col-12 col-md-6 mb-3">
                         <label for="sku" class="form-label fw-bold">Product Code</label>
-                        <input type="text" class="form-control" id="sku" placeholder="Enter a product code" required>
+                        <input type="text" class="form-control" id="sku" name="sku"
+                               placeholder="Enter a product code" required>
+                        <div class="invalid-feedback"></div>
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-12 col-md-6 mb-3">
                         <label for="barcode" class="form-label fw-bold">Barcode</label>
-                        <input type="text" class="form-control" id="barcode" placeholder="Enter a barcode">
+                        <input type="text" class="form-control" id="barcode" name="barcode"
+                               placeholder="Enter a barcode">
+                        <div class="invalid-feedback"></div>
                     </div>
 
                     <div class="col-12 col-md-6 mb-3">
                         <label for="brand" class="form-label fw-bold">Brand</label>
-                        <input type="text" class="form-control" id="brand" placeholder="Enter a brand">
+                        <input type="text" class="form-control" id="brand" name="brand"
+                               placeholder="Enter a brand">
+                        <div class="invalid-feedback"></div>
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-12 col-md-6 mb-3">
                         <label for="price" class="form-label fw-bold">Price</label>
-                        <input type="number" class="form-control" id="price" placeholder="0.00" min="0" step="0.01"
-                            required>
+                        <input type="number" class="form-control" id="price" name="price"
+                               placeholder="0.00" min="0" step="0.01" required>
+                        <div class="invalid-feedback"></div>
                     </div>
 
                     <div class="col-12 col-md-6 mb-3">
                         <label for="promo" class="form-label fw-bold">Promo Price</label>
-                        <input type="number" class="form-control" id="promo" placeholder="0.00" min="0" step="0.01">
+                        <input type="number" class="form-control" id="promo" name="promo"
+                               placeholder="0.00" min="0" step="0.01">
+                        <div class="invalid-feedback"></div>
                     </div>
                 </div>
 
                 <div class="mb-3">
                     <label for="slug" class="form-label fw-bold">Slug</label>
-                    <input type="text" class="form-control" id="slug" disabled>
+                    <input type="text" class="form-control" id="slug" name="slug" readonly>
                     <small class="text-muted">Auto-generated from product name</small>
+                    <div class="invalid-feedback"></div>
                 </div>
 
                 <div class="row align-items-center">
                     <div class="col-12 col-md-8 mb-3">
                         <label for="quantity" class="form-label fw-bold">Quantity</label>
-                        <input type="number" class="form-control" id="quantity" placeholder="Enter a quantity" min="0"
-                            required>
+                        <input type="number" class="form-control" id="quantity" name="quantity"
+                               placeholder="Enter a quantity" min="0" required>
+                        <div class="invalid-feedback"></div>
                     </div>
 
                     <div class="col-12 col-md-3 mb-3 ms-md-auto">
                         <label class="form-label fw-bold d-block">Status</label>
                         <div class="form-check form-switch">
-                            <input class="form-check-input" type="checkbox" id="statusSwitch" checked>
+                            <input class="form-check-input" type="checkbox" id="statusSwitch" name="status" checked>
                             <label class="form-check-label status-label" for="statusSwitch">Available</label>
                         </div>
+                        <div class="invalid-feedback"></div>
                     </div>
                 </div>
 
@@ -85,11 +100,18 @@
 
                         <div id="featureContainer">
                             <div class="feature-row d-flex gap-2 mb-2">
-                                <input type="text" class="form-control" placeholder="Key (e.g., Color)"
-                                    name="feature_key[]">
-                                <input type="text" class="form-control" placeholder="Value (e.g., Red)"
-                                    name="feature_value[]">
-                                <button class="btn btn-danger remove-feature" disabled>×</button>
+                                <div class="flex-fill">
+                                    <input type="text" class="form-control" placeholder="Key (e.g., Color)"
+                                           name="feature_key[]">
+                                    <div class="invalid-feedback"></div>
+                                </div>
+                                <div class="flex-fill">
+                                    <input type="text" class="form-control" placeholder="Value (e.g., Red)"
+                                           name="feature_value[]">
+                                    <div class="invalid-feedback"></div>
+                                </div>
+
+                                <button type="button" class="btn btn-danger remove-feature">×</button>
                             </div>
                         </div>
 
@@ -101,19 +123,20 @@
 
                 <div class="mb-3">
                     <label for="description" class="form-label fw-bold">Description</label>
-                    <textarea class="form-control" id="description" rows="4"
-                        placeholder="Enter product description"></textarea>
+                    <textarea class="form-control" id="description" name="description" rows="4"
+                              placeholder="Enter product description" required></textarea>
+                    <div class="invalid-feedback"></div>
                 </div>
 
                 <div class="row mt-2">
                     <div class="col-12">
-                        <button type="submit" class="btn w-100 fw-bold gray-btn">
+                        <button class="btn w-100 fw-bold gray-btn" id="add-product-btn">
                             Add Product
                         </button>
                     </div>
                 </div>
-
             </form>
+            <div id="alert-message"></div>
         </div>
     </div>
 </div>

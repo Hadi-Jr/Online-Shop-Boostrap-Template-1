@@ -12,35 +12,41 @@
 
             <div class="row">
                 <div class="col-12">
-                    <form>
+                    <form id="register_form">
                         <div class="mb-3">
                             <label for="full_name" class="form-label fw-bold">Full Name</label>
                             <input type="text" class="form-control" id="full_name" placeholder="Enter your full name"
-                                required>
+                                   name="full_name" required>
+                            <div class="invalid-feedback"></div>
                         </div>
 
                         <div class="mb-3">
                             <label for="username" class="form-label fw-bold">Username</label>
                             <input type="text" class="form-control" id="username" placeholder="Choose a username"
-                                required>
+                                   name="username" required>
+                            <div class="invalid-feedback"></div>
                         </div>
 
                         <div class="mb-3">
                             <label for="email" class="form-label fw-bold">Email Address</label>
-                            <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+                            <input type="email" class="form-control" id="email" placeholder="Enter your email"
+                                   name="email" required>
+                            <div class="invalid-feedback"></div>
                         </div>
 
                         <div class="mb-3">
                             <label for="password" class="form-label fw-bold">Password</label>
                             <input type="password" class="form-control" id="password" placeholder="Create a password"
-                                required>
+                                   name="password" required>
+                            <div class="invalid-feedback"></div>
                         </div>
 
 
                         <div class="mb-3">
                             <label for="confirm_password" class="form-label fw-bold">Confirm Password</label>
                             <input type="password" class="form-control" id="confirm_password"
-                                placeholder="Confirm your password" required>
+                                   name="confirm_password" placeholder="Confirm your password" required>
+                            <div class="invalid-feedback"></div>
                         </div>
                     </form>
                 </div>
@@ -50,19 +56,22 @@
                 <div class="col-12">
                     <div>
                         <span class="p-1 small">
-                            <a class="pointer">Already have an account ?</a>
+                            <a href="<?= base_url('/login') ?>" class="pointer">Already have an account ?</a>
                         </span>
                     </div>
                 </div>
                 <div class="col-12">
-                    <button class="btn w-100 fw-bold gray-btn">
+                    <button class="btn w-100 fw-bold gray-btn" id="signup_btn">
                         Sign Up
                     </button>
                 </div>
             </div>
+
+            <div class="alert-message mt-4"></div>
         </div>
 
     </div>
 </div>
 
 <!-- SIGN UP END -->
+
