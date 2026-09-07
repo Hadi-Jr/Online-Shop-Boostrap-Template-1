@@ -176,6 +176,7 @@ a {
 
 .card .prices {
   font-size: 16px !important;
+  height: 45px;
 }
 
 .regular-price,
@@ -337,12 +338,14 @@ a {
   height: fit-content;
 }
 
-.category-price-del del {
+.category-price-del,
+.related-price-del del {
   color: #dc3545;
   font-weight: bold;
 }
 
-.category-price-current {
+.category-price-current,
+.related-price-current {
   font-weight: bold;
   color: #6c757d;
 }
@@ -529,4 +532,18 @@ a {
 
 .favorite-btns {
   font-size: 12px !important;
+}
+
+.variant img {
+  width: 100px !important;
+}
+
+.variant {
+  cursor: pointer;
+  border-width: 2px !important;
+}
+
+.variant.selected {
+  border-width: 3px !important;
+  border-color: rgb(128, 124, 124) !important;
 }
